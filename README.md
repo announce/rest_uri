@@ -25,7 +25,7 @@ Or install it yourself as:
 Simply,
 
 ```rb
-tweet_url = RestUri.parse('https://twitter.com/jack/status/761304654147784704/photo/1')
+tweet_url = RestUri.parse('https://twitter.com/jack/statuses/761304654147784704/photo/1')
 tweet_url.status_id  #=> 761304654147784704
 tweet_url.photo_id  #=> 1
 ```
