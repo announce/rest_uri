@@ -11,6 +11,11 @@ module RestUri
   class Base
     include Resource
     attr_accessor :uri, :parser, :identifier
+
+    # @param uri [String, URI]
+    # @param parser [Object] :parser URI parser such as Addressable::URI
+    # @param identifier [Symbol] :identifier Suffix of method name to specify resource
+    # @raise ArgumentError if `identifier` is empty
     def initialize(uri, parser: DEFAULT_PARSER, identifier: DEFAULT_IDENTIFIER)
       raise ArgumentError, 'Empty identifier' if not identifier.respond_to? :empty? or identifier.empty?
       @uri = uri
@@ -20,10 +25,7 @@ module RestUri
   end
 
   # Parse REST URI
-  # @param  uri [String, URI]
-  # @param
-  # @option options [Object] :parser URI parser such as Addressable::URI
-  # @option options [Symbol] :identifier Suffix of method name to specify resource
+  # @see RestUri::Base#initialize
   # @example
   #   require 'addressable/uri'
   #   require 'rest_uri'
