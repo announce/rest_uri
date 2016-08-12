@@ -4,11 +4,11 @@ module RestUri
   module Resource
     # Take a URI string or URI object and return its ID
     # @example
-    #   resource_id = RestUri::Resource.resource_id('https://twitter.com/sferik/resource/540897316908331009/')
-    #   resource_id #=> 540897316908331009
+    #   status_id = RestUri::Resource.resource_id('status', https://twitter.com/sferik/status/540897316908331009/')
+    #   status_id #=> 540897316908331009
     # @param name [String] Resource name
-    # @param object [Integer, String, URI] An ID, URI, or object.
-    # @option parser [Integer, String, URI] An ID, URI, or object.
+    # @param object [Integer, String, URI] An ID, URI, or object
+    # @param parser [URI] To parse a string URL
     # @return [Integer, NilClass]
     def self.resource_id(name, object, parser: DEFAULT_PARSER)
       return nil if not name.respond_to? :empty? or name.empty?
