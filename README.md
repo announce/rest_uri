@@ -37,7 +37,7 @@ require 'addressable/uri'
 require 'rest_uri'
 
 rest_uri = RestUri.parse(
-  'https://twitter.com/yukihiro_matz/status/755950562227605504#尾骶骨',
+  'https://こんにちは.com/people/755950562227605504#foo',
   parser: Addressable::URI)
-rest_uri.status_id  #=> 755950562227605504
+rest_uri.person_id  #=> 755950562227605504
 ```
